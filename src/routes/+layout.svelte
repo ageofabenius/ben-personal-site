@@ -1,6 +1,6 @@
 <script>
 	import '../app.postcss';
-	import { AppShell, AppBar, AppRail, AppRailAnchor } from '@skeletonlabs/skeleton';
+	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
 </script>
 
 <!-- App Shell -->
@@ -20,19 +20,6 @@
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
-	<!-- <svelte:fragment slot="sidebarLeft">
-		<AppRail>
-			<svelte:fragment slot="lead">
-				Works
-			</svelte:fragment>
-			<AppRailAnchor href="/for_fun">
-				For fun
-			</AppRailAnchor>
-			<AppRailAnchor href="/experiments">
-				Experiments
-			</AppRailAnchor>
-		</AppRail>
-	</svelte:fragment> -->
 	<!-- Page Route Content -->
 	<slot />
 </AppShell>
