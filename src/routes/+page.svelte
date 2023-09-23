@@ -1,12 +1,13 @@
 <script>
 	import { Avatar, filter, NoirLight } from '@skeletonlabs/skeleton';
+	import MyPhoto from '$lib/assets/my_photo.jpeg'
 </script>
 
 <div class="container h-full mx-auto flex justify-center items-center flex-col space-y-4">
 	<div use:filter={'#NoirLight'}>
 		<NoirLight />
 		<Avatar
-			src="src/assets/my_photo.jpeg"
+			src={MyPhoto}
 			width="w-32"
 			rounded="rounded-full"
 		/>
