@@ -1,5 +1,4 @@
 <script>
-	import { filter, Noir } from '@skeletonlabs/skeleton';
 	import LinkedInLogo from '$lib/assets/LinkedIn-Logos/LI-Logo.png';
 </script>
 
@@ -8,18 +7,20 @@
 		<article class="prose prose-lg">
 			<h1>About me</h1>
 			<p>I like dogs.</p>
-            <p>That's pretty much all you need to know.</p>
 		</article>
 	</div>
 	<div class="container mx-auto flex justify-center items-center flex-col space-y-4">
-		<a href="https://www.linkedin.com/in/davidsonbenjamin/" target="_blank" use:filter={'#Noir'}>
-			<Noir />
-			<img
+		<div class="prose prose-lg">
+			<h1>Connect</h1>
+			<hr>
+			<a href="https://www.linkedin.com/in/davidsonbenjamin/" target="_blank" >
+				<img
 				src={LinkedInLogo}
 				alt="LinkedIn Profile"
 				class="max-h-10"
-			/>
-			<!-- 540 * 2212 original size -->
-		</a>
+				/>
+				<!-- 540 * 2212 original size -->
+			</a>
+		</div>
 	</div>
 </div>

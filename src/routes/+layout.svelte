@@ -11,12 +11,14 @@
 			<svelte:fragment slot="lead">
 				<strong class="text-xl uppercase">Ben Davidson</strong>
 			</svelte:fragment>
-			<svelte:fragment slot="default">
+			<svelte:fragment slot="headline">
 				Test site, please ignore
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<a href="/">Home</a>
-				<a href="/about">About</a>
+				<div >
+				<a href="/" class="btn hover:variant-filled-primary">Home</a>
+				<a href="/about" class="btn hover:variant-filled-primary">About</a>
+			</div>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
