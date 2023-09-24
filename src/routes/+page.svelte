@@ -10,7 +10,8 @@
 		<Avatar src={MyPhoto} width="w-32" rounded="rounded-full" />
 	</div>
 	<div in:fade={{ delay: 1000, duration: 1000}}>
-		<hr class="w-96 h-1 bg-neutral-500 border-0" />
+		<!-- <hr class="w-96 h-1 bg-neutral-500 border-0" /> -->
+		<hr class="w-96 h-0.5 bg-gradient-to-r from-transparent via-neutral-500 opacity-50" />
 	</div>
 	<div in:fade={{ delay: 1000, duration: 1000}}>
 		<p class="text-center blockquote">

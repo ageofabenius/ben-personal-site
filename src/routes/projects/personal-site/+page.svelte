@@ -10,7 +10,7 @@
             <a href="https://kit.svelte.dev/">SvelteKit</a>,
             <a href="https://www.skeleton.dev/">Skeleton</a>, and
             <a href="https://tailwindcss.com/">Tailwind CSS</a>
-            <em>by following the tutorial.</em>
+            by <em>following the tutorial.</em>
         </p>
             Source on GitHub
             <a href="https://github.com/ageofabenius/ben-personal-site" class="btn-icon bg-initial">

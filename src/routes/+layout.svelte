@@ -9,19 +9,17 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Ben Davidson</strong>
+				<strong class="text-xl uppercase">
+					<a href="/" class="btn hover:variant-filled-primary">Ben Davidson</a>
+				</strong>
 			</svelte:fragment>
-			<svelte:fragment slot="default">
-				Test site, please ignore
-			</svelte:fragment>
-			<svelte:fragment slot="headline">
-				Projects
-			</svelte:fragment>
+			<svelte:fragment slot="default">Test site, please ignore</svelte:fragment>
+			<svelte:fragment slot="headline">Projects</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<div >
-				<a href="/" class="btn hover:variant-filled-primary">Home</a>
-				<a href="/about" class="btn hover:variant-filled-primary">About</a>
-			</div>
+				<div>
+					<a href="/" class="btn hover:variant-filled-primary">Home</a>
+					<a href="/about" class="btn hover:variant-filled-primary">About</a>
+				</div>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>

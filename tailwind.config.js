@@ -16,9 +16,6 @@ export default {
 		typography,
 		skeleton({
 			themes: {
-				preset: [
-					"skeleton",
-				],
 				custom: [
 					ben_theme,
 				],
