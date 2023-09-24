@@ -9,6 +9,7 @@
 			<p>I like dogs.</p>
 		</article>
 	</div>
+	<div class="inline-block h-full min-h-[1em] w-0.5 self-stretch bg-neutral-500 opacity-100 dark:opacity-50"></div>
 	<div class="container mx-auto flex justify-center items-center flex-col space-y-4">
 		<div class="prose prose-lg">
 			<h1>Connect</h1>

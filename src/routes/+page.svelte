@@ -1,7 +1,7 @@
 <script>
 	import { Avatar, filter, NoirLight } from '@skeletonlabs/skeleton';
 	import MyPhoto from '$lib/assets/my_photo.jpeg';
-	import { fade, blur, fly, slide, scale, draw, crossfade } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 </script>
 
 <div class="container h-full mx-auto flex justify-center items-center flex-col space-y-4">
@@ -9,8 +9,8 @@
 		<NoirLight />
 		<Avatar src={MyPhoto} width="w-32" rounded="rounded-full" />
 	</div>
-	<div>
-		<hr class="w-96" />
+	<div in:fade={{ delay: 1000, duration: 1000}}>
+		<hr class="w-96 h-1 bg-neutral-500 border-0" />
 	</div>
 	<div in:fade={{ delay: 1000, duration: 1000}}>
 		<p class="text-center blockquote">
