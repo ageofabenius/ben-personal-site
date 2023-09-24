@@ -14,7 +14,7 @@
 	</div>
 	<div in:fade={{ delay: 1000, duration: 1000}}>
 		<p class="text-center blockquote">
-			This personal website makes it look like I know what I'm doing!
+			With this personal website, I look like I know what I'm doing!
 		</p>
 	</div>
 

@@ -1,6 +1,6 @@
 <script>
 	import '../app.postcss';
-	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import { AppShell, AppBar, AppRail, AppRailAnchor } from '@skeletonlabs/skeleton';
 </script>
 
 <!-- App Shell -->
@@ -11,8 +11,11 @@
 			<svelte:fragment slot="lead">
 				<strong class="text-xl uppercase">Ben Davidson</strong>
 			</svelte:fragment>
-			<svelte:fragment slot="headline">
+			<svelte:fragment slot="default">
 				Test site, please ignore
+			</svelte:fragment>
+			<svelte:fragment slot="headline">
+				Projects
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<div >
@@ -21,6 +24,13 @@
 			</div>
 			</svelte:fragment>
 		</AppBar>
+	</svelte:fragment>
+	<svelte:fragment slot="sidebarLeft">
+		<AppRail>
+			<svelte:fragment slot="lead">
+				<AppRailAnchor href="/projects/personal-site">This site</AppRailAnchor>
+			</svelte:fragment>
+		</AppRail>
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<slot />
