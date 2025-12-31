@@ -1,124 +1,94 @@
-<script lang="ts"></script>
-
-{#snippet sticker(label, col_start, row_start, col_span = 1, row_span = 1)}
-<div class="
-  col-start-{col_start} row-start-{row_start} col-span-{col_span} row-span-{row_span}
-">
-<div class="
-  text-center
-  hover:bg-blue-200
-  hover:cursor-pointer
-">
-    {label}
-</div>
-</div>
-{/snippet}
-
+<script lang="ts">
+	import Sticker from './Sticker.svelte';
+</script>
 
 <!-- Page -->
-<div class="flex items-center justify-center w-full h-dvh">
-    
-    <!-- Laptop -->
-    <div class="perspective-midrange">
-        
-        <!-- Laptop screen -->
-        <div class="
-          w-240 h-160
-          bg-gray-400
-          rounded-4xl
-          border-gray-600 border-2
-
-          shadow-[inset_4px_4px_0_0_rgba(255,255,255,0.22),inset_-4px_-4px_0_0_rgba(0,0,0,0.35)]
-          
+<div class="flex h-dvh w-full items-center justify-center">
+	<!-- Laptop -->
+	<div class="perspective-midrange">
+		<!-- Laptop screen -->
+		<div
+			class="
+          h-160 w-240
           origin-bottom
           -rotate-x-2
+          rounded-4xl border-2
 
-          p-4 pb-8
-        ">
+          border-gray-600
+          
+          bg-gray-400
+          p-4
 
-        <!-- Screen glow -->
-        <div class="
+          pb-8 shadow-[inset_4px_4px_0_0_rgba(255,255,255,0.22),inset_-4px_-4px_0_0_rgba(0,0,0,0.35)]
+        "
+		>
+			<!-- Screen glow -->
+			<div
+				class="
           pointer-events-none
           absolute inset-0
           rounded-[3rem]
           bg-[radial-gradient(200%_200%_at_50%_0%,rgba(255,210,138,0.15),rgba(255,210,138,0.00),transparent_60%)]
-        "></div>
+        "
+			></div>
 
-        
-        <!-- Screen contents -->
-        <div class="size-full grid grid-cols-9 grid-rows-5 gap-2 items-center">
-            <!-- Logo -->
-            <!-- Position in center of screen -->
-            <div class="col-start-5 row-start-3 flex items-center justify-center">
-                <!-- Style the logo div -->
-                <div class="
+			<!-- Screen contents -->
+			<div class="grid size-full grid-cols-9 grid-rows-5 items-center gap-2">
+				<!-- Logo -->
+				<!-- Position in center of screen -->
+				<div class="col-start-5 row-start-3 flex items-center justify-center">
+					<!-- Style the logo div -->
+					<div
+						class="
+                  flex
                   size-24
+                  items-center justify-center rounded-full
                   bg-gray-500/30
-                  flex items-center justify-center
-                  rounded-full
-                ">
-                    <div class="text-center font-bold text-5xl">B</div>
-                </div>
-            </div>
-            
-            {@render sticker("A")}
-            {@render sticker("D")}
-            {@render sticker("E")}
-            {@render sticker("F")}
-            {@render sticker("A")}
-            {@render sticker("B")}
-            {@render sticker("C")}
-            {@render sticker("D")}
-            {@render sticker("E")}
-            {@render sticker("F")}
-            {@render sticker("A")}
-            {@render sticker("B")}
-            {@render sticker("C")}
-            {@render sticker("D")}
-            {@render sticker("E")}
-            {@render sticker("F")}
-            {@render sticker("A")}
-            {@render sticker("B")}
-            {@render sticker("C")}
-            {@render sticker("D")}
-            {@render sticker("E")}
-            {@render sticker("C")}
-            {@render sticker("D")}
-            {@render sticker("E")}
-            
-        </div>
+                "
+					>
+						<div class="text-center text-5xl font-bold">B</div>
+					</div>
+				</div>
 
-        </div>
-        <!-- Laptop base -->
-        <div class="
-          w-240 h-8
-          bg-gray-400
+				<Sticker img_file_path="/stickers/rust-logo-512x512-blk.png" />
+				<Sticker img_file_path="/stickers/cuddlyferris.svg" />
+				<Sticker img_file_path="/stickers/python-logo-only.png" />
+			</div>
+		</div>
+		<!-- Laptop base -->
+		<div
+			class="
+          h-8 w-240
           rounded-lg
-          border-gray-600 border-2
+          border-2
+          border-gray-600 bg-gray-400
 
           shadow-[inset_0_2px_0_rgba(0,0,0,0.35),inset_0_0_0_4px_rgba(255,255,255,0.08),0_18px_35px_rgba(0,0,0,0.45)]
-        ">
-            <!-- Laptop hinges -->
-            <div class="
-              w-32 h-14
-              absolute
-              left-1/6 -translate-x-1/2
-              bottom-0
-              bg-gray-400
-              border-gray-600 border-2
+        "
+		>
+			<!-- Laptop hinges -->
+			<div
+				class="
+              absolute bottom-0
+              left-1/6
+              h-14 w-32
+              -translate-x-1/2
+              border-2
+              border-gray-600 bg-gray-400
               shadow-[1px_0_0_0_rgba(0,0,0,1),-1px_0_0_0_rgba(0,0,0,1),0_-1px_0_0_rgba(0,0,0,1),inset_2px_4px_0_0_rgba(255,255,255,0.22),inset_-2px_-6px_0_0_rgba(0,0,0,0.30)]
-            "/>
-            <div class="
-              w-32 h-14
-              absolute
-              right-1/6 translate-x-1/2
+            "
+			/>
+			<div
+				class="
+              absolute right-1/6
               bottom-0
-              bg-gray-400
-              border-gray-600 border-2
+              h-14 w-32
+              translate-x-1/2
+              border-2
+              border-gray-600 bg-gray-400
               shadow-[1px_0_0_0_rgba(0,0,0,1),-1px_0_0_0_rgba(0,0,0,1),0_-1px_0_0_rgba(0,0,0,1),inset_2px_4px_0_0_rgba(255,255,255,0.22),inset_-2px_-6px_0_0_rgba(0,0,0,0.30)]
-            "/>
-            
-        </div>
-    </div>
+            "
+			/>
+		</div>
+	</div>
 </div>
-
