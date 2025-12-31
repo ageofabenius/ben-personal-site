@@ -1,8 +1,12 @@
 <script lang="ts">
+	import type { PostitData } from "./model";
+
 	let {
-		img_file_path
+		img_file_path,
+        show_postit
 	}: {
 		img_file_path: string;
+        show_postit?: (content: PostitData) => void;
 	} = $props();
 </script>
 
@@ -11,9 +15,9 @@
       size-24
       cursor-pointer
       p-0.5
-      hover:scale-110
       transition
       duration-300
+      hover:scale-110
       hover:-rotate-5
     "
 >
