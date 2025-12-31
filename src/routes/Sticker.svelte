@@ -2,26 +2,28 @@
 	import Postit from './Postit.svelte';
 
 	let {
-		img_file_path,
-		grid_coords = '',
+		sticker_background = 'white',
 		postit_content = '',
-		postit_placement = 'left-0 top-full translate-y-4'
+		postit_placement = 'left-0 top-full translate-y-4',
+		children
 	}: {
-		img_file_path: string;
-		grid_coords?: string;
+		sticker_background?: string;
 		postit_content?: string;
 		postit_placement?: string;
+		children: any;
 	} = $props();
+
+	// Generate unique filter names based on the sticker_background color
+	// (filters are global and so will otherwise conflict)
+	// svelte-ignore state_referenced_locally
+	const filter_base_name = `sticker-base-${sticker_background}`;
+	// svelte-ignore state_referenced_locally
+	const filter_hovered_name = `sticker-hovered-${sticker_background}`;
 
 	let is_hovered = $state(false);
 </script>
 
-<div
-	class="
-	relative
-	{grid_coords}
-	"
->
+<div class="relative">
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
 		class="
@@ -38,43 +40,8 @@
 	>
 		<svg viewBox="0 0 512 512" class="overflow-visible">
 			<defs>
-				<filter id="sticker-base" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-					<!-- 1. Close small interior holes -->
-					<feMorphology in="SourceAlpha" operator="dilate" radius="50" result="d1" />
-					<feMorphology in="d1" operator="erode" radius="50" result="closed" />
-
-					<!-- 2. Expand for outline -->
-					<feMorphology in="closed" operator="dilate" radius="25" result="outline" />
-
-					<!-- 3. Smooth the edge -->
-					<feGaussianBlur in="outline" stdDeviation="20" result="blurred" />
-
-					<!-- 4. Re-crisp alpha (threshold) -->
-					<feColorMatrix
-						in="blurred"
-						type="matrix"
-						result="smoothAlpha"
-						values="
-                    1 0 0 0 0
-                    0 1 0 0 0
-                    0 0 1 0 0
-                    0 0 0 12 -6
-                    "
-					/>
-
-					<!-- 5. Color the outline -->
-					<feFlood flood-color="white" result="color" />
-					<feComposite in="color" in2="smoothAlpha" operator="in" result="outlineColor" />
-
-					<!-- 6. Merge original image -->
-					<feMerge>
-						<feMergeNode in="outlineColor" />
-						<feMergeNode in="SourceGraphic" />
-					</feMerge>
-				</filter>
-
 				<filter
-					id="sticker-hovered"
+					id={filter_base_name}
 					filterUnits="userSpaceOnUse"
 					color-interpolation-filters="sRGB"
 				>
@@ -102,7 +69,46 @@
 					/>
 
 					<!-- 5. Color the outline -->
-					<feFlood flood-color="white" result="color" />
+					<feFlood flood-color={sticker_background} result="color" />
+					<feComposite in="color" in2="smoothAlpha" operator="in" result="outlineColor" />
+
+					<!-- 6. Merge original image -->
+					<feMerge>
+						<feMergeNode in="outlineColor" />
+						<feMergeNode in="SourceGraphic" />
+					</feMerge>
+				</filter>
+
+				<filter
+					id={filter_hovered_name}
+					filterUnits="userSpaceOnUse"
+					color-interpolation-filters="sRGB"
+				>
+					<!-- 1. Close small interior holes -->
+					<feMorphology in="SourceAlpha" operator="dilate" radius="50" result="d1" />
+					<feMorphology in="d1" operator="erode" radius="50" result="closed" />
+
+					<!-- 2. Expand for outline -->
+					<feMorphology in="closed" operator="dilate" radius="25" result="outline" />
+
+					<!-- 3. Smooth the edge -->
+					<feGaussianBlur in="outline" stdDeviation="20" result="blurred" />
+
+					<!-- 4. Re-crisp alpha (threshold) -->
+					<feColorMatrix
+						in="blurred"
+						type="matrix"
+						result="smoothAlpha"
+						values="
+                    1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    0 0 0 12 -6
+                    "
+					/>
+
+					<!-- 5. Color the outline -->
+					<feFlood flood-color={sticker_background} result="color" />
 					<feComposite in="color" in2="smoothAlpha" operator="in" result="outlineColor" />
 
 					<!-- 6. Merge original image -->
@@ -130,27 +136,12 @@
 				</filter>
 			</defs>
 
-			<image
-				href={img_file_path}
-				x="0"
-				y="0"
-				width="512"
-				height="512"
-				preserveAspectRatio="xMidYMid meet"
-				class="sticker-image"
-			/>
+			<g style="filter: url(#{is_hovered ? filter_hovered_name : filter_base_name})">
+				{@render children()}
+			</g>
 		</svg>
 	</div>
 	{#if postit_content && postit_placement && is_hovered}
 		<Postit content={postit_content} placement={postit_placement} />
 	{/if}
 </div>
-
-<style>
-	.sticker-image {
-		filter: url(#sticker-base);
-	}
-	:hover .sticker-image {
-		filter: url(#sticker-hovered);
-	}
-</style>
