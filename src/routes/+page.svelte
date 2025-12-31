@@ -1,4 +1,21 @@
-Page
+<script lang="ts"></script>
+
+{#snippet sticker(label, col_start, row_start, col_span = 1, row_span = 1)}
+<div class="
+  col-start-{col_start} row-start-{row_start} col-span-{col_span} row-span-{row_span}
+">
+<div class="
+  text-center
+  hover:bg-blue-200
+  hover:cursor-pointer
+">
+    {label}
+</div>
+</div>
+{/snippet}
+
+
+<!-- Page -->
 <div class="flex items-center justify-center w-full h-dvh">
     
     <!-- Laptop -->
@@ -20,10 +37,10 @@ Page
         ">
         
         <!-- Screen contents -->
-        <div class="size-full grid grid-cols-5 grid-rows-5 gap-2 items-center">
+        <div class="size-full grid grid-cols-9 grid-rows-5 gap-2 items-center">
             <!-- Logo -->
             <!-- Position in center of screen -->
-            <div class="col-start-3 row-start-3 flex items-center justify-center">
+            <div class="col-start-5 row-start-3 flex items-center justify-center">
                 <!-- Style the logo div -->
                 <div class="
                   size-24
@@ -34,27 +51,31 @@ Page
                     <div class="text-center font-bold text-5xl">B</div>
                 </div>
             </div>
-            <div>A</div>
-            <div>D</div>
-            <div>E</div>
-            <div>F</div>
-            <div>A</div>
-            <div>B</div>
-            <div>C</div>
-            <div>D</div>
-            <div>E</div>
-            <div>F</div>
-            <div>A</div>
-            <div>B</div>
-            <div>C</div>
-            <div>D</div>
-            <div>E</div>
-            <div>F</div>
-            <div>A</div>
-            <div>B</div>
-            <div>C</div>
-            <div>D</div>
-            <div>E</div>
+            
+            {@render sticker("A")}
+            {@render sticker("D")}
+            {@render sticker("E")}
+            {@render sticker("F")}
+            {@render sticker("A")}
+            {@render sticker("B")}
+            {@render sticker("C")}
+            {@render sticker("D")}
+            {@render sticker("E")}
+            {@render sticker("F")}
+            {@render sticker("A")}
+            {@render sticker("B")}
+            {@render sticker("C")}
+            {@render sticker("D")}
+            {@render sticker("E")}
+            {@render sticker("F")}
+            {@render sticker("A")}
+            {@render sticker("B")}
+            {@render sticker("C")}
+            {@render sticker("D")}
+            {@render sticker("E")}
+            {@render sticker("C")}
+            {@render sticker("D")}
+            {@render sticker("E")}
             
         </div>
 
