@@ -14,6 +14,7 @@
       hover:scale-110
       transition
       duration-300
+      hover:-rotate-5
     "
 >
 	<svg viewBox="0 0 512 512" class="overflow-visible">
