@@ -35,6 +35,15 @@
 
           p-4 pb-8
         ">
+
+        <!-- Screen glow -->
+        <div class="
+          pointer-events-none
+          absolute inset-0
+          rounded-[3rem]
+          bg-[radial-gradient(200%_200%_at_50%_0%,rgba(255,210,138,0.15),rgba(255,210,138,0.00),transparent_60%)]
+        "></div>
+
         
         <!-- Screen contents -->
         <div class="size-full grid grid-cols-9 grid-rows-5 gap-2 items-center">
@@ -93,7 +102,7 @@
             <div class="
               w-32 h-14
               absolute
-              left-1/5 -translate-x-1/2
+              left-1/6 -translate-x-1/2
               bottom-0
               bg-gray-400
               border-gray-600 border-2
@@ -102,7 +111,7 @@
             <div class="
               w-32 h-14
               absolute
-              right-1/5 translate-x-1/2
+              right-1/6 translate-x-1/2
               bottom-0
               bg-gray-400
               border-gray-600 border-2
