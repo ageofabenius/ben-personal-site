@@ -46,14 +46,15 @@
 					color-interpolation-filters="sRGB"
 				>
 					<!-- 1. Close small interior holes -->
-					<feMorphology in="SourceAlpha" operator="dilate" radius="50" result="d1" />
-					<feMorphology in="d1" operator="erode" radius="50" result="closed" />
+					<feMorphology in="SourceAlpha" operator="dilate" radius="100" result="close_dilate" />
+					<feMorphology in="close_dilate" operator="erode" radius="100" result="closed" />
 
 					<!-- 2. Expand for outline -->
-					<feMorphology in="closed" operator="dilate" radius="25" result="outline" />
+					<feMorphology in="SourceAlpha" operator="dilate" radius="25" result="outline" />
+					<feComposite in="outline" in2="closed" operator="over" result="combined" />
 
 					<!-- 3. Smooth the edge -->
-					<feGaussianBlur in="outline" stdDeviation="20" result="blurred" />
+					<feGaussianBlur in="combined" stdDeviation="20" result="blurred" />
 
 					<!-- 4. Re-crisp alpha (threshold) -->
 					<feColorMatrix
@@ -85,14 +86,15 @@
 					color-interpolation-filters="sRGB"
 				>
 					<!-- 1. Close small interior holes -->
-					<feMorphology in="SourceAlpha" operator="dilate" radius="50" result="d1" />
-					<feMorphology in="d1" operator="erode" radius="50" result="closed" />
+					<feMorphology in="SourceAlpha" operator="dilate" radius="100" result="close_dilate" />
+					<feMorphology in="close_dilate" operator="erode" radius="100" result="closed" />
 
 					<!-- 2. Expand for outline -->
-					<feMorphology in="closed" operator="dilate" radius="25" result="outline" />
+					<feMorphology in="SourceAlpha" operator="dilate" radius="25" result="outline" />
+					<feComposite in="outline" in2="closed" operator="over" result="combined" />
 
 					<!-- 3. Smooth the edge -->
-					<feGaussianBlur in="outline" stdDeviation="20" result="blurred" />
+					<feGaussianBlur in="combined" stdDeviation="20" result="blurred" />
 
 					<!-- 4. Re-crisp alpha (threshold) -->
 					<feColorMatrix
