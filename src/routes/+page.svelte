@@ -28,6 +28,7 @@ to build reliable and efficient software.
 					preserveAspectRatio="xMidYMid meet"
 				/>
 			</Sticker>
+
 			<Sticker content="Python">
 				<image
 					href="/stickers/python-logo-only.png"
@@ -36,6 +37,7 @@ to build reliable and efficient software.
 					preserveAspectRatio="xMidYMid meet"
 				/>
 			</Sticker>
+
 			<Sticker content="Typescript">
 				<image
 					href="/stickers/ts-logo-512.png"
@@ -44,6 +46,7 @@ to build reliable and efficient software.
 					preserveAspectRatio="xMidYMid meet"
 				/>
 			</Sticker>
+
 			<Sticker content="Sveltekit">
 				<image
 					href="/stickers/svelte-logo-square.svg"
@@ -52,9 +55,19 @@ to build reliable and efficient software.
 					preserveAspectRatio="xMidYMid meet"
 				/>
 			</Sticker>
+
 			<Sticker content="PostgreSQL">
 				<image
 					href="/stickers/PostgreSQL_logo.3colors.svg"
+					width="512"
+					height="512"
+					preserveAspectRatio="xMidYMid meet"
+				/>
+			</Sticker>
+
+			<Sticker content="Docker">
+				<image
+					href="/stickers/docker-mark-blue.svg"
 					width="512"
 					height="512"
 					preserveAspectRatio="xMidYMid meet"
