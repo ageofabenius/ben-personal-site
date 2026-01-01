@@ -20,14 +20,7 @@ to build reliable and efficient software.
 	<Laptop>
 		<!-- Software -->
 		<div class="col-span-9 row-span-2 grid grid-cols-subgrid grid-rows-subgrid">
-			<Sticker
-				postit_content={dedent(`
-				# Rust
-				**language**
-
-				My experience is rated 4.7/6 by ChatGPT?
-				`)}
-			>
+			<Sticker content="Rust">
 				<image
 					href="/stickers/cuddlyferris.svg"
 					width="512"
@@ -35,14 +28,7 @@ to build reliable and efficient software.
 					preserveAspectRatio="xMidYMid meet"
 				/>
 			</Sticker>
-			<Sticker
-				postit_content={dedent(`
-			# Python
-			**language**
-
-			Everybody knows Python
-			`)}
-			>
+			<Sticker content="Python">
 				<image
 					href="/stickers/python-logo-only.png"
 					width="512"
@@ -50,13 +36,7 @@ to build reliable and efficient software.
 					preserveAspectRatio="xMidYMid meet"
 				/>
 			</Sticker>
-			<Sticker
-				postit_content={dedent(`
-			# Typescript
-			**language**
-
-			Righting the wrongs of the past`)}
-			>
+			<Sticker content="Typescript">
 				<image
 					href="/stickers/ts-logo-512.png"
 					width="512"
@@ -64,14 +44,7 @@ to build reliable and efficient software.
 					preserveAspectRatio="xMidYMid meet"
 				/>
 			</Sticker>
-			<Sticker
-				postit_content={dedent(`
-			# Svelte & Sveltekit
-			**web framework**
-
-			Brought you this website
-			`)}
-			>
+			<Sticker content="Sveltekit">
 				<image
 					href="/stickers/svelte-logo-square.svg"
 					width="512"
@@ -79,14 +52,7 @@ to build reliable and efficient software.
 					preserveAspectRatio="xMidYMid meet"
 				/>
 			</Sticker>
-			<Sticker
-				postit_content={dedent(`
-			# PostgreSQL
-			**database**
-
-			And also everything else
-			`)}
-			>
+			<Sticker content="PostgreSQL">
 				<image
 					href="/stickers/PostgreSQL_logo.3colors.svg"
 					width="512"
@@ -101,20 +67,21 @@ to build reliable and efficient software.
 			class="
 			col-span-9 row-span-1
 			row-start-5
-			grid grid-cols-subgrid grid-rows-subgrid stroke-black
+			grid grid-cols-subgrid grid-rows-subgrid
+			stroke-black
 			[direction:rtl]
 			"
 		>
-			<Sticker>
+			<Sticker callout_direction="bottom" content="Computers!">
 				{@html MouseIcon}
 			</Sticker>
-			<Sticker>
+			<Sticker callout_direction="bottom" content="Running">
 				{@html ShoeIcon}
 			</Sticker>
-			<Sticker>
+			<Sticker callout_direction="bottom" content="Dogs">
 				{@html DogIcon}
 			</Sticker>
-			<Sticker>
+			<Sticker callout_direction="bottom" content="Fatherhood">
 				{@html StrollerIcon}
 			</Sticker>
 		</div>

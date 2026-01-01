@@ -1,15 +1,15 @@
 <script lang="ts">
-	import Postit from './Postit.svelte';
+	import Callout from './Callout.svelte';
 
 	let {
 		sticker_background = 'white',
-		postit_content = '',
-		postit_placement = 'left-0 top-full translate-y-4',
+		content = '',
+		callout_direction = 'top',
 		children
 	}: {
 		sticker_background?: string;
-		postit_content?: string;
-		postit_placement?: string;
+		content?: string;
+		callout_direction?: 'top' | 'bottom';
 		children: any;
 	} = $props();
 
@@ -141,7 +141,7 @@
 			</g>
 		</svg>
 	</div>
-	{#if postit_content && postit_placement && is_hovered}
-		<Postit content={postit_content} placement={postit_placement} />
+	{#if content && is_hovered}
+		<Callout {content} direction={callout_direction} />
 	{/if}
 </div>
