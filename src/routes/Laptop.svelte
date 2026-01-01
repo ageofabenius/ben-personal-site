@@ -41,6 +41,7 @@
                   size-24
                   items-center justify-center rounded-full
                   bg-gray-500/30
+                  shadow-[inset_0.25px_0.5px_0_rgba(0,0,0,0.35)]
                 "
 				>
 					<div class="text-center text-5xl font-bold">B</div>
