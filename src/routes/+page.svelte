@@ -3,6 +3,11 @@
 	import Laptop from './Laptop.svelte';
 	import Sticker from './Sticker.svelte';
 
+	import ShoeIcon from '$lib/assets/stickers/shoe.svg?raw';
+	import StrollerIcon from '$lib/assets/stickers/stroller.svg?raw';
+	import DogIcon from '$lib/assets/stickers/dog.svg?raw';
+	import MouseIcon from '$lib/assets/stickers/mouse.svg?raw';
+
 	const RUST = `
     # Rust
     
@@ -28,7 +33,6 @@ to build reliable and efficient software.
 					width="512"
 					height="512"
 					preserveAspectRatio="xMidYMid meet"
-					class="sticker-image"
 				/>
 			</Sticker>
 			<Sticker
@@ -44,7 +48,6 @@ to build reliable and efficient software.
 					width="512"
 					height="512"
 					preserveAspectRatio="xMidYMid meet"
-					class="sticker-image"
 				/>
 			</Sticker>
 			<Sticker
@@ -59,7 +62,6 @@ to build reliable and efficient software.
 					width="512"
 					height="512"
 					preserveAspectRatio="xMidYMid meet"
-					class="sticker-image"
 				/>
 			</Sticker>
 			<Sticker
@@ -75,20 +77,46 @@ to build reliable and efficient software.
 					width="512"
 					height="512"
 					preserveAspectRatio="xMidYMid meet"
-					class="sticker-image"
+				/>
+			</Sticker>
+			<Sticker
+				postit_content={dedent(`
+			# PostgreSQL
+			**database**
+
+			And also everything else
+			`)}
+			>
+				<image
+					href="/stickers/PostgreSQL_logo.3colors.svg"
+					width="512"
+					height="512"
+					preserveAspectRatio="xMidYMid meet"
 				/>
 			</Sticker>
 		</div>
 
 		<!-- Personal -->
 		<div
-			class="col-span-9 row-span-1 row-start-5 grid grid-cols-subgrid grid-rows-subgrid [direction:rtl]"
+			class="
+			col-span-9 row-span-1
+			row-start-5
+			grid grid-cols-subgrid grid-rows-subgrid stroke-black
+			[direction:rtl]
+			"
 		>
-			<!-- <Sticker img_file_path="/stickers/shoe.svg" />
-			<Sticker img_file_path="/stickers/bike.svg" />
-			<Sticker img_file_path="/stickers/stroller.svg" />
-			<Sticker img_file_path="/stickers/controller.svg" />
-			<Sticker img_file_path="/stickers/dog.svg" /> -->
+			<Sticker>
+				{@html MouseIcon}
+			</Sticker>
+			<Sticker>
+				{@html ShoeIcon}
+			</Sticker>
+			<Sticker>
+				{@html DogIcon}
+			</Sticker>
+			<Sticker>
+				{@html StrollerIcon}
+			</Sticker>
 		</div>
 	</Laptop>
 </div>
