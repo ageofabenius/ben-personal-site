@@ -65,24 +65,27 @@ to build reliable and efficient software.
 		<!-- Personal -->
 		<div
 			class="
-			col-span-9 row-span-1
+			col-span-4
+			col-start-6
 			row-start-5
 			grid grid-cols-subgrid grid-rows-subgrid
 			stroke-black
-			[direction:rtl]
 			"
 		>
-			<Sticker callout_direction="bottom" content="Computers!">
-				{@html MouseIcon}
+			<Sticker callout_direction="bottom" content="Fatherhood">
+				{@html StrollerIcon}
 			</Sticker>
-			<Sticker callout_direction="bottom" content="Running">
-				{@html ShoeIcon}
-			</Sticker>
+
 			<Sticker callout_direction="bottom" content="Dogs">
 				{@html DogIcon}
 			</Sticker>
-			<Sticker callout_direction="bottom" content="Fatherhood">
-				{@html StrollerIcon}
+
+			<Sticker callout_direction="bottom" content="Running">
+				{@html ShoeIcon}
+			</Sticker>
+
+			<Sticker callout_direction="bottom" content="Computers!">
+				{@html MouseIcon}
 			</Sticker>
 		</div>
 	</Laptop>
