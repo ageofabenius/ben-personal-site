@@ -23,7 +23,7 @@
 	let is_hovered = $state(false);
 </script>
 
-<div class="relative">
+<div class="relative size-full">
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
 		class="
@@ -38,7 +38,7 @@
 		onmouseenter={() => (is_hovered = true)}
 		onmouseleave={() => (is_hovered = false)}
 	>
-		<svg viewBox="0 0 512 512" class="overflow-visible">
+		<svg viewBox="0 0 512 512" class="overflow-visible size-full">
 			<defs>
 				<filter
 					id={filter_base_name}
