@@ -50,7 +50,7 @@
 					<feMorphology in="close_dilate" operator="erode" radius="100" result="closed" />
 
 					<!-- 2. Expand for outline -->
-					<feMorphology in="SourceAlpha" operator="dilate" radius="25" result="outline" />
+					<feMorphology in="SourceAlpha" operator="dilate" radius="35" result="outline" />
 					<feComposite in="outline" in2="closed" operator="over" result="combined" />
 
 					<!-- 3. Smooth the edge -->
@@ -90,7 +90,7 @@
 					<feMorphology in="close_dilate" operator="erode" radius="100" result="closed" />
 
 					<!-- 2. Expand for outline -->
-					<feMorphology in="SourceAlpha" operator="dilate" radius="25" result="outline" />
+					<feMorphology in="SourceAlpha" operator="dilate" radius="35" result="outline" />
 					<feComposite in="outline" in2="closed" operator="over" result="combined" />
 
 					<!-- 3. Smooth the edge -->
