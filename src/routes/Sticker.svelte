@@ -43,6 +43,10 @@
 				<filter
 					id={filter_base_name}
 					filterUnits="userSpaceOnUse"
+					x="-200"
+					y="-200"
+					width="400%"
+					height="400%"
 					color-interpolation-filters="sRGB"
 				>
 					<!-- 1. Close small interior holes -->
