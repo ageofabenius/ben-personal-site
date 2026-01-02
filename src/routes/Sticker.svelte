@@ -23,6 +23,49 @@
 	let is_hovered = $state(false);
 </script>
 
+{#snippet base_filter()}
+	<!-- 1. Close small interior holes using multiple steps with small radii-->
+	<feMorphology in="SourceAlpha" operator="dilate" radius="25" result="close_dilate_1" />
+	<feMorphology in="close_dilate_1" operator="dilate" radius="25" result="close_dilate_2" />
+	<feMorphology in="close_dilate_2" operator="dilate" radius="25" result="close_dilate_3" />
+	<feMorphology in="close_dilate_3" operator="dilate" radius="25" result="closed_dilate_4" />
+
+	<feMorphology in="closed_dilate_4" operator="erode" radius="25" result="closed_1" />
+	<feMorphology in="closed_1" operator="erode" radius="25" result="closed_2" />
+	<feMorphology in="closed_2" operator="erode" radius="25" result="closed_3" />
+	<feMorphology in="closed_3" operator="erode" radius="25" result="closed" />
+
+	<!-- 2. Expand for outline -->
+	<feMorphology in="closed" operator="dilate" radius="35" result="outline" />
+	<feComposite in="outline" in2="closed" operator="over" result="combined" />
+
+	<!-- 3. Smooth the edge -->
+	<feGaussianBlur in="combined" stdDeviation="20" result="blurred" />
+
+	<!-- 4. Re-crisp alpha (threshold) -->
+	<feColorMatrix
+		in="blurred"
+		type="matrix"
+		result="smoothAlpha"
+		values="
+                    1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    0 0 0 12 -6
+                    "
+	/>
+
+	<!-- 5. Color the outline -->
+	<feFlood flood-color={sticker_background} result="color" />
+	<feComposite in="color" in2="smoothAlpha" operator="in" result="outlineColor" />
+
+	<!-- 6. Merge original image -->
+	<feMerge>
+		<feMergeNode in="outlineColor" />
+		<feMergeNode in="SourceGraphic" />
+	</feMerge>
+{/snippet}
+
 <div class="relative size-full">
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
@@ -49,87 +92,19 @@
 					height="400%"
 					color-interpolation-filters="sRGB"
 				>
-					<!-- 1. Close small interior holes using multiple steps with small radii-->
-					<feMorphology in="SourceAlpha" operator="dilate" radius="25" result="close_dilate_1" />
-					<feMorphology in="close_dilate_1" operator="dilate" radius="25" result="close_dilate_2" />
-					<feMorphology in="close_dilate_2" operator="dilate" radius="25" result="close_dilate_3" />
-					<feMorphology in="close_dilate_3" operator="dilate" radius="25" result="closed_dilate_4" />
-
-					<feMorphology in="closed_dilate_4" operator="erode" radius="25" result="closed_1" />
-					<feMorphology in="closed_1" operator="erode" radius="25" result="closed_2" />
-					<feMorphology in="closed_2" operator="erode" radius="25" result="closed_3" />
-					<feMorphology in="closed_3" operator="erode" radius="25" result="closed" />
-
-
-					<!-- 2. Expand for outline -->
-					<feMorphology in="closed" operator="dilate" radius="35" result="outline" />
-					<feComposite in="outline" in2="closed" operator="over" result="combined" />
-
-					<!-- 3. Smooth the edge -->
-					<feGaussianBlur in="combined" stdDeviation="20" result="blurred" />
-
-					<!-- 4. Re-crisp alpha (threshold) -->
-					<feColorMatrix
-						in="blurred"
-						type="matrix"
-						result="smoothAlpha"
-						values="
-                    1 0 0 0 0
-                    0 1 0 0 0
-                    0 0 1 0 0
-                    0 0 0 12 -6
-                    "
-					/>
-
-					<!-- 5. Color the outline -->
-					<feFlood flood-color={sticker_background} result="color" />
-					<feComposite in="color" in2="smoothAlpha" operator="in" result="outlineColor" />
-
-					<!-- 6. Merge original image -->
-					<feMerge>
-						<feMergeNode in="outlineColor" />
-						<feMergeNode in="SourceGraphic" />
-					</feMerge>
+					{@render base_filter()}
 				</filter>
 
 				<filter
 					id={filter_hovered_name}
 					filterUnits="userSpaceOnUse"
+					x="-200"
+					y="-200"
+					width="400%"
+					height="400%"
 					color-interpolation-filters="sRGB"
 				>
-					<!-- 1. Close small interior holes -->
-					<feMorphology in="SourceAlpha" operator="dilate" radius="100" result="close_dilate" />
-					<feMorphology in="close_dilate" operator="erode" radius="100" result="closed" />
-
-					<!-- 2. Expand for outline -->
-					<feMorphology in="SourceAlpha" operator="dilate" radius="35" result="outline" />
-					<feComposite in="outline" in2="closed" operator="over" result="combined" />
-
-					<!-- 3. Smooth the edge -->
-					<feGaussianBlur in="combined" stdDeviation="20" result="blurred" />
-
-					<!-- 4. Re-crisp alpha (threshold) -->
-					<feColorMatrix
-						in="blurred"
-						type="matrix"
-						result="smoothAlpha"
-						values="
-                    1 0 0 0 0
-                    0 1 0 0 0
-                    0 0 1 0 0
-                    0 0 0 12 -6
-                    "
-					/>
-
-					<!-- 5. Color the outline -->
-					<feFlood flood-color={sticker_background} result="color" />
-					<feComposite in="color" in2="smoothAlpha" operator="in" result="outlineColor" />
-
-					<!-- 6. Merge original image -->
-					<feMerge>
-						<feMergeNode in="outlineColor" />
-						<feMergeNode in="SourceGraphic" />
-					</feMerge>
+					{@render base_filter()}
 
 					<!-- 7. Shadow from that merged sticker -->
 					<feDropShadow
