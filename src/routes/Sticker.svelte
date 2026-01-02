@@ -38,7 +38,7 @@
 		onmouseenter={() => (is_hovered = true)}
 		onmouseleave={() => (is_hovered = false)}
 	>
-		<svg viewBox="0 0 512 512" class="overflow-visible size-full">
+		<svg viewBox="0 0 512 512" class="size-full overflow-visible">
 			<defs>
 				<filter
 					id={filter_base_name}

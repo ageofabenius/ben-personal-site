@@ -14,22 +14,24 @@
     pointer-events-none
     absolute
     top-1/2 left-1/2
+    size-full
     -translate-x-1/2
-    -translate-y-1/2
+	-translate-y-1/2
     "
 >
 	<!-- This div provides an offset from the center of the sticker -->
 	<div
 		class="
             relative
-            {direction === 'top' ? 'translate-x-8 -translate-y-30' : ''}
-            {direction === 'bottom' ? 'translate-x-12 translate-y-45' : ''}
+			 size-full
+            {direction === 'top' ? 'translate-x-1/2 -translate-y-5/3' : ''}
+            {direction === 'bottom' ? 'translate-x-2/3 translate-y-5/2' : ''}
         "
 	>
 		<!-- Arrow -->
 		<div
 			class="
-            size-16 stroke-black/50
+            size-full stroke-black/50
             {direction === 'top' ? '-scale-y-100 rotate-100' : ''}
             {direction === 'bottom' ? '-rotate-110' : ''}
             "
@@ -64,11 +66,15 @@
 		<div
 			class="
                 absolute
-                {direction === 'top' ? '-top-1/4 left-full' : ''}
-                {direction === 'bottom' ? '-bottom-1/4 left-full translate-x-2' : ''}
+                {direction === 'top' ? '-top-1/4 left-full -translate-y-1/2' : ''}
+                {direction === 'bottom'
+				? '-bottom-1/4 left-full translate-x-1/10 translate-y-1/2'
+				: ''}
             "
 		>
-			<span class="handwritten text-4xl font-semibold text-black/50">{content}</span>
+			<div class="handwritten size-full text-[clamp(0.5rem,5vw,2rem)] font-semibold text-black/50">
+				{content}
+			</div>
 		</div>
 	</div>
 </div>

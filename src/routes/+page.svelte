@@ -17,7 +17,7 @@ to build reliable and efficient software.
 </script>
 
 <div class="flex h-dvh w-full items-center justify-center">
-	<div class="size-full max-h-5/6 max-w-5/6">
+	<div class="size-full max-h-5/8 max-w-5/8">
 		<Laptop>
 			<div class="col-span-9 row-span-2 grid grid-cols-subgrid grid-rows-subgrid">
 				<Sticker content="Rust">
