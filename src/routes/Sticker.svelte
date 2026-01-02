@@ -138,7 +138,7 @@
 				</filter>
 			</defs>
 
-			<g style="filter: url(#{is_hovered ? filter_hovered_name : filter_base_name})">
+			<g filter="url(#{is_hovered ? filter_hovered_name : filter_base_name})">
 				{@render children()}
 			</g>
 		</svg>
