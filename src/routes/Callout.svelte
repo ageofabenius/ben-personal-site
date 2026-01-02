@@ -23,9 +23,9 @@
 	<div
 		class="
             relative
-			 size-full
+			size-full
             {direction === 'top' ? 'translate-x-1/2 -translate-y-5/3' : ''}
-            {direction === 'bottom' ? 'translate-x-2/3 translate-y-5/2' : ''}
+            {direction === 'bottom' ? '-translate-x-1/2 translate-y-5/2' : ''}
         "
 	>
 		<!-- Arrow -->
@@ -33,7 +33,7 @@
 			class="
             size-full stroke-black/50
             {direction === 'top' ? '-scale-y-100 rotate-100' : ''}
-            {direction === 'bottom' ? '-rotate-110' : ''}
+            {direction === 'bottom' ? '-scale-y-100 -rotate-80' : ''}
             "
 		>
 			<svg
@@ -68,7 +68,7 @@
                 absolute
                 {direction === 'top' ? '-top-1/4 left-full -translate-y-1/2' : ''}
                 {direction === 'bottom'
-				? '-bottom-1/4 left-full translate-x-1/10 translate-y-1/2'
+				? '-bottom-1/4 right-full -translate-x-1/10 translate-y-1/2'
 				: ''}
             "
 		>
