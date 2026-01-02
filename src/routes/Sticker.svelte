@@ -62,7 +62,7 @@
 
 
 					<!-- 2. Expand for outline -->
-					<feMorphology in="SourceAlpha" operator="dilate" radius="35" result="outline" />
+					<feMorphology in="closed" operator="dilate" radius="35" result="outline" />
 					<feComposite in="outline" in2="closed" operator="over" result="combined" />
 
 					<!-- 3. Smooth the edge -->
