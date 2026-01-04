@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { dedent } from 'ts-dedent';
 	import Laptop from './Laptop.svelte';
 	import Sticker from './Sticker.svelte';
 
@@ -8,27 +7,13 @@
 	import DogIcon from '$lib/assets/stickers/dog.svg?raw';
 	import MouseIcon from '$lib/assets/stickers/mouse.svg?raw';
 	import { LAYOUT_DEBUG } from '$lib/debug';
-
-	const RUST = `
-    # Rust
-    
-    A language empowering everyone
-to build reliable and efficient software.
-    `;
+	import { goto } from '$app/navigation';
+	import PageHeader from '$lib/PageHeader.svelte';
+	import { navigate_left, navigate_right } from '$lib/navigate';
 </script>
 
 <div class="h-dvh w-full">
-	<!-- Header row -->
-	<div
-		class="
-		handwritten
-		flex
-		h-1/8
-		items-center justify-between
-		px-[5%]
-		text-[clamp(0.5rem,5vw,2rem)] text-black/50
-		{LAYOUT_DEBUG && 'bg-blue-100'}"
-	>
+	<PageHeader>
 		<span
 			class="group
 			cursor-pointer
@@ -36,7 +21,10 @@ to build reliable and efficient software.
 			{LAYOUT_DEBUG && 'bg-yellow-100'}"
 		>
 			<span class="invisible group-hover:visible">&lt&nbsp</span>
+			<!-- svelte-ignore a11y_click_events_have_key_events -->
+			<!-- svelte-ignore a11y_no_static_element_interactions -->
 			<span
+				onclick={() => navigate_left('/projects')}
 				class="
 				inline-block
 				transform
@@ -53,7 +41,10 @@ to build reliable and efficient software.
 			hover:font-semibold
 			{LAYOUT_DEBUG && 'bg-yellow-100'}"
 		>
+			<!-- svelte-ignore a11y_click_events_have_key_events -->
+			<!-- svelte-ignore a11y_no_static_element_interactions -->
 			<span
+				onclick={() => navigate_right('about')}
 				class="
 				inline-block
 				transform
@@ -65,7 +56,7 @@ to build reliable and efficient software.
 			</span>
 			<span class="invisible group-hover:visible">&nbsp&gt</span>
 		</span>
-	</div>
+	</PageHeader>
 	<!-- Spacer -->
 	<div class="md:h-1/16 xl:h-1/8 {LAYOUT_DEBUG && 'bg-orange-100'}"></div>
 	<!-- Laptop -->
