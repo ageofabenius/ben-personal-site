@@ -41,7 +41,7 @@
 				fill="none"
 				class="arrow-svg"
 				aria-hidden="true"
-				stroke-width="6"
+				stroke-width="4"
 				stroke-linecap="round"
 				stroke-linejoin="round"
 			>
@@ -68,7 +68,7 @@
                 absolute
                 {direction === 'top' ? '-top-1/4 left-full -translate-y-1/2' : ''}
                 {direction === 'bottom'
-				? '-bottom-1/4 right-full -translate-x-1/10 translate-y-1/2'
+				? 'right-full -bottom-1/4 -translate-x-1/10 translate-y-1/2'
 				: ''}
             "
 		>

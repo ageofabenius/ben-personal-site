@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { LAYOUT_DEBUG } from '$lib/debug';
 	import Callout from './Callout.svelte';
 
 	let {
@@ -130,7 +131,7 @@
 			</g>
 		</svg>
 	</div>
-	{#if content && is_hovered}
+	{#if (content && is_hovered) || LAYOUT_DEBUG}
 		<Callout {content} direction={callout_direction} />
 	{/if}
 </div>
