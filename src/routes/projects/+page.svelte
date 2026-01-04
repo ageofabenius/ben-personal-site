@@ -30,5 +30,5 @@
 			<span class="invisible group-hover:visible">&nbsp&gt</span>
 		</span>
 	</PageHeader>
-	<div class="border-2 border-blue-200">Projects PAGE</div>
+	<div class=" {LAYOUT_DEBUG && 'border-2 border-blue-200'}">Projects PAGE</div>
 </div>
