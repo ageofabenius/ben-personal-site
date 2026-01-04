@@ -49,18 +49,18 @@
 	}
 
 	:root[data-nav='right']::view-transition-old(root) {
-		animation: 1000ms both slide-to-left;
+		animation: 1000ms cubic-bezier(0.25, 0.1, 0.25, 1) both slide-to-left;
 	}
 
 	:root[data-nav='right']::view-transition-new(root) {
-		animation: 1000ms both slide-from-right;
+		animation: 1000ms cubic-bezier(0.25, 0.1, 0.25, 1) both slide-from-right;
 	}
 
 	:root[data-nav='left']::view-transition-old(root) {
-		animation: 1000ms both slide-to-right;
+		animation: 1000ms cubic-bezier(0.25, 0.1, 0.25, 1) both slide-to-right;
 	}
 
 	:root[data-nav='left']::view-transition-new(root) {
-		animation: 1000ms both slide-from-left;
+		animation: 1000ms cubic-bezier(0.25, 0.1, 0.25, 1) both slide-from-left;
 	}
 </style>
