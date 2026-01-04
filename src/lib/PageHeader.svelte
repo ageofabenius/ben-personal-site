@@ -11,6 +11,7 @@
 		handwritten
 		flex
 		h-1/8
+		shrink-0
 		items-center justify-between
 		px-[5%]
 		text-[clamp(0.5rem,5vw,2rem)] text-black/50

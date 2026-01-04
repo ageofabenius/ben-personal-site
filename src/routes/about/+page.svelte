@@ -27,6 +27,8 @@
 				Home
 			</span>
 		</span>
+		<span>About Me</span>
+		<div></div>
 	</PageHeader>
 	<div
 		class="
@@ -37,9 +39,7 @@
 		"
 	>
 		<div class="prose text-xl {LAYOUT_DEBUG && 'border-2 border-blue-200'}">
-			<h1>About Me</h1>
-			<hr class="h-0.5 w-full bg-linear-to-r from-transparent via-neutral-500 opacity-50" />
-			<p>Hi, I'm Ben.</p>
+			<h1>Hi, I'm Ben.</h1>
 			<p>I write software.</p>
 			<p>
 				Some of it runs on-prem. Some of it runs in the cloud. Some of it is currently running on

@@ -12,7 +12,8 @@
 	import { navigate_left, navigate_right } from '$lib/navigate';
 </script>
 
-<div class="h-dvh w-full">
+<div class="h-dvh w-full flex flex-col">
+	<!-- <div class="h-1/8 shrink-0"></div> -->
 	<PageHeader>
 		<span
 			class="group
@@ -58,9 +59,9 @@
 		</span>
 	</PageHeader>
 	<!-- Spacer -->
-	<div class="md:h-1/16 xl:h-1/8 {LAYOUT_DEBUG && 'bg-orange-100'}"></div>
+	<div class="shrink-0 h-1/16 xl:h-1/8 {LAYOUT_DEBUG && 'bg-orange-100'}"></div>
 	<!-- Laptop -->
-	<div class="flex flex-col items-center {LAYOUT_DEBUG && 'bg-green-100'}">
+	<div class="grow flex flex-col items-center {LAYOUT_DEBUG && 'bg-green-100'}">
 		<div class="flex size-full max-h-5/8 max-w-5/8 flex-col items-center">
 			<Laptop>
 				<div class="col-span-9 row-span-2 grid grid-cols-subgrid grid-rows-subgrid">
@@ -141,4 +142,6 @@
 			</Laptop>
 		</div>
 	</div>
+	<!-- Spacer -->
+	<div class="shrink-0 h-1/16 xl:h-1/8 {LAYOUT_DEBUG && 'bg-orange-100'}"></div>
 </div>
