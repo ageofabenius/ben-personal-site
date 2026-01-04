@@ -29,12 +29,42 @@ to build reliable and efficient software.
 		text-[clamp(0.5rem,5vw,2rem)] text-black/50
 		{LAYOUT_DEBUG && 'bg-blue-100'}"
 	>
-		<span class="group cursor-pointer hover:font-semibold {LAYOUT_DEBUG && 'bg-yellow-100'}"
-			><span class="invisible group-hover:visible">&lt&nbsp</span>Projects</span
+		<span
+			class="group
+			cursor-pointer
+			hover:font-semibold
+			{LAYOUT_DEBUG && 'bg-yellow-100'}"
 		>
-		<span class="group cursor-pointer hover:font-semibold {LAYOUT_DEBUG && 'bg-yellow-100'}"
-			>About<span class="invisible group-hover:visible">&nbsp&gt</span></span
+			<span class="invisible group-hover:visible">&lt&nbsp</span>
+			<span
+				class="
+				inline-block
+				transform
+				transition-transform
+				duration-100
+				active:-rotate-3"
+			>
+				Projects
+			</span>
+		</span>
+		<span
+			class="group
+			cursor-pointer
+			hover:font-semibold
+			{LAYOUT_DEBUG && 'bg-yellow-100'}"
 		>
+			<span
+				class="
+				inline-block
+				transform
+				transition-transform
+				duration-100
+				active:rotate-3"
+			>
+				About
+			</span>
+			<span class="invisible group-hover:visible">&nbsp&gt</span>
+		</span>
 	</div>
 	<!-- Spacer -->
 	<div class="md:h-1/16 xl:h-1/8 {LAYOUT_DEBUG && 'bg-orange-100'}"></div>
