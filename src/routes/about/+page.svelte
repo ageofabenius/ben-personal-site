@@ -8,6 +8,7 @@
 	<PageHeader>
 		<span
 			class="group
+			flex-1
 			cursor-pointer
 			hover:font-semibold
 			{LAYOUT_DEBUG && 'bg-yellow-100'}"
@@ -27,8 +28,8 @@
 				Home
 			</span>
 		</span>
-		<span>About Me</span>
-		<div></div>
+		<span class="flex-1 text-center">About Me</span>
+		<div class="flex-1"></div>
 	</PageHeader>
 	<div
 		class="

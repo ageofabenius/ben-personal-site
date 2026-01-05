@@ -12,11 +12,13 @@
 
 <div class="h-dvh w-full">
 	<PageHeader>
-		<div></div>
-		<span>Projects</span>
+		<div class="flex-1"></div>
+		<span class="flex-1 text-center">Projects</span>
 		<span
 			class="group
+			flex-1
 			cursor-pointer
+			text-right
 			hover:font-semibold
 			{LAYOUT_DEBUG && 'bg-yellow-100'}"
 		>
