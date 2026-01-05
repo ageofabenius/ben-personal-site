@@ -13,7 +13,7 @@
 			hover:font-semibold
 			{LAYOUT_DEBUG && 'bg-yellow-100'}"
 		>
-			<span class="invisible group-hover:visible">&lt&nbsp</span>
+			<span>&lt&nbsp</span>
 			<!-- svelte-ignore a11y_click_events_have_key_events -->
 			<!-- svelte-ignore a11y_no_static_element_interactions -->
 			<span

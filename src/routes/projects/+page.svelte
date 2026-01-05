@@ -35,7 +35,7 @@
 			>
 				Home
 			</span>
-			<span class="invisible group-hover:visible">&nbsp&gt</span>
+			<span>&nbsp&gt</span>
 		</span>
 	</PageHeader>
 	<div
