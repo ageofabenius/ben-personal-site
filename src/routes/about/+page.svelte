@@ -1,43 +1,73 @@
 <script>
-	import LinkedInLogo from '$lib/assets/LinkedIn-Logos/LI-Logo.png';
-    import GitHubLogo from '$lib/assets/GitHub-Logos/GitHub-Logos/GitHub_Logo.png';
+	import { LAYOUT_DEBUG } from '$lib/debug';
+	import { navigate_left } from '$lib/navigate';
+	import PageHeader from '$lib/PageHeader.svelte';
 </script>
 
-<div class="container h-full mx-auto justify-center items-center space-x-4 px-20 grid grid-cols-1 md:grid-cols-2 gap-28">
-	<div class="container mx-auto justify-center items-center space-y-4">
-		<article class="prose prose-lg">
-			<h1>About me</h1>
-			<hr class="w-full h-0.5 bg-gradient-to-r from-transparent via-neutral-500 opacity-50" />
-			<p>I like dogs.</p>
-					<p>
-			I build this website as a learning exercise, trying keep up with the new frameworks of the time.
-		</p>
-		<p>
-			I'm hoping that in my tinkering I can start finding the time to wrap up my little projects into presentable states where they're interesting enough to earn a space in my, empty, sidebar.
-		</p>
-		<p>
-			I will probably never update this site again.
-		</p>
-		</article>
-	</div>
-	<div class="container mx-auto flex justify-center items-center flex-col space-y-4">
-		<div class="prose prose-lg">
+<div class="h-dvh w-full">
+	<PageHeader>
+		<span
+			class="group
+			flex-1
+			cursor-pointer
+			hover:font-semibold
+			{LAYOUT_DEBUG && 'bg-yellow-100'}"
+		>
+			<span class="invisible group-hover:visible">&lt&nbsp</span>
+			<!-- svelte-ignore a11y_click_events_have_key_events -->
+			<!-- svelte-ignore a11y_no_static_element_interactions -->
+			<span
+				onclick={() => navigate_left('/')}
+				class="
+				inline-block
+				transform
+				transition-transform
+				duration-100
+				active:-rotate-3"
+			>
+				Home
+			</span>
+		</span>
+		<span class="flex-1 text-center">About Me</span>
+		<div class="flex-1"></div>
+	</PageHeader>
+	<div
+		class="
+		grid gap-[5%] px-[15%]
+		py-[5%] lg:grid-cols-2
+		{LAYOUT_DEBUG && 'border-2 border-green-200'}
+		handwritten
+		"
+	>
+		<div class="prose text-xl {LAYOUT_DEBUG && 'border-2 border-blue-200'}">
+			<h1>Hi, I'm Ben.</h1>
+			<p>I write software.</p>
+			<p>
+				Some of it runs on-prem. Some of it runs in the cloud. Some of it is currently running on
+				satellites orbiting the Earth.
+			</p>
+			<p>
+				I'm mostly a backend and systems developer. In my spare time I like playing around with
+				other things like frontend frameworks (hence this site), game engines, and deep Rust rabbit
+				holes.
+			</p>
+			<p>
+				This is the second iteration of this site. There will be no third iteration as a
+				long-running child process is currently consuming most of my resources.
+			</p>
+		</div>
+		<div class="prose text-center text-xl {LAYOUT_DEBUG && 'border-2 border-purple-200'}">
 			<h1>Connect</h1>
-			<hr class="w-full h-0.5 bg-gradient-to-r from-transparent via-neutral-500 opacity-50" />
-			<a href="https://www.linkedin.com/in/davidsonbenjamin/" target="_blank" >
-				<img
-				src={LinkedInLogo}
-				alt="LinkedIn Profile"
-				class="max-h-10"
-				/>
-				<!-- 540 * 2212 original size -->
-			</a>
-			<a href="https://github.com/ageofabenius">
-				<img src={GitHubLogo}
-                alt="GitHub source"
-                class="max-h-10"
-                />
-			</a>
+			<hr class="h-0.5 w-full bg-linear-to-r from-transparent via-neutral-500 opacity-50" />
+			<div class="flex flex-col items-center">
+				<a href="https://www.linkedin.com/in/davidsonbenjamin/" target="_blank">
+					<img src="LI-Logo.png" alt="LinkedIn Profile" class="h-10" />
+				</a>
+				<a href="https://github.com/ageofabenius" target="_blank" class="flex items-center">
+					<img src="github-mark.svg" alt="GitHub invertocat" class="h-8" />
+					<img src="GitHub_Logo.png" alt="GitHub source" class="h-10" />
+				</a>
+			</div>
 		</div>
 	</div>
 </div>
