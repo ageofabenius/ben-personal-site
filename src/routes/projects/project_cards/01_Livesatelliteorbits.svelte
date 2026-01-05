@@ -12,11 +12,11 @@
 			Celestrak."
 >
 	{#snippet links()}
-		<div class="flex items-center justify-between gap-4 {LAYOUT_DEBUG && 'bg-slate-100'}">
+		<div class="flex flex-wrap items-center justify-between gap-4 {LAYOUT_DEBUG && 'bg-slate-100'}">
 			<div class="flex h-6 items-center {LAYOUT_DEBUG && 'bg-lime-100'}">
 				<div class="flex h-full items-center gap-2 rounded-l-full bg-emerald-100 px-2.5 text-sm">
 					<div class="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500"></div>
-					live at
+					<span class="hidden sm:inline">live at</span>
 				</div>
 				<a
 					href="https://livesatelliteorbits.com"
@@ -43,7 +43,7 @@
 						<img src="github-mark.svg" alt="GitHub invertocat" class=" h-4" />
 						<img src="GitHub_Logo.png" alt="GitHub source" class="h-4" />
 					</div>
-					Repository ↗
+					<span class="text-nowrap">Repository ↗</span>
 				</a>
 			</div>
 		</div>
