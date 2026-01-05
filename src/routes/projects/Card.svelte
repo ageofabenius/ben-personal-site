@@ -21,10 +21,13 @@
     overflow-hidden
     rounded-lg
 	lg:grid-cols-3
+	shadow-lg
+	border
+	border-black/10
     {LAYOUT_DEBUG && 'bg-orange-200'}"
 >
 	<!-- Screenshot -->
-	<div class="size-full overflow-hidden rounded {LAYOUT_DEBUG && 'bg-lime-100'}">
+	<div class="size-full rounded {LAYOUT_DEBUG && 'bg-lime-100'}">
 		{#if screenshot_path}
 			<img
 				src={screenshot_path}
@@ -36,16 +39,8 @@
 	<!-- Text -->
 	<div
 		class="
-		-mt-2
 		rounded-lg
-		border-2
-		border-black/25
-		pt-2
 		lg:col-span-2
-		lg:mt-0
-		lg:-ml-2
-		lg:pt-0
-		lg:pl-2
 		"
 	>
 		<div
