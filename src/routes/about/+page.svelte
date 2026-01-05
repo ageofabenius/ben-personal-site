@@ -3,7 +3,7 @@
 	import PageHeader from '$lib/PageHeader.svelte';
 </script>
 
-<div class="h-dvh w-full">
+<div class="h-dvh w-full overflow-auto">
 	<PageHeader page_title="About Me" left_link={{ content: 'Home', href: '/' }} />
 	<div
 		class="

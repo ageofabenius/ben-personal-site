@@ -9,7 +9,7 @@
 		.map(([_, m]: [string, any]) => m.default);
 </script>
 
-<div class="h-dvh w-full">
+<div class="h-dvh w-full overflow-auto">
 	<PageHeader page_title="Projects" right_link={{ content: 'Home', href: '/' }} />
 	<div
 		class="
