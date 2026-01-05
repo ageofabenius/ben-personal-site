@@ -1,36 +1,10 @@
 <script>
 	import { LAYOUT_DEBUG } from '$lib/debug';
-	import { navigate_left } from '$lib/navigate';
 	import PageHeader from '$lib/PageHeader.svelte';
 </script>
 
 <div class="h-dvh w-full">
-	<PageHeader>
-		<span
-			class="group
-			flex-1
-			cursor-pointer
-			hover:font-semibold
-			{LAYOUT_DEBUG && 'bg-yellow-100'}"
-		>
-			<span>&lt&nbsp</span>
-			<!-- svelte-ignore a11y_click_events_have_key_events -->
-			<!-- svelte-ignore a11y_no_static_element_interactions -->
-			<span
-				onclick={() => navigate_left('/')}
-				class="
-				inline-block
-				transform
-				transition-transform
-				duration-100
-				active:-rotate-3"
-			>
-				Home
-			</span>
-		</span>
-		<span class="flex-1 text-center">About Me</span>
-		<div class="flex-1"></div>
-	</PageHeader>
+	<PageHeader page_title="About Me" left_link={{ content: 'Home', href: '/' }} />
 	<div
 		class="
 		grid gap-[5%] px-[15%]

@@ -7,60 +7,15 @@
 	import DogIcon from '$lib/assets/stickers/dog.svg?raw';
 	import MouseIcon from '$lib/assets/stickers/mouse.svg?raw';
 	import { LAYOUT_DEBUG } from '$lib/debug';
-	import { goto } from '$app/navigation';
 	import PageHeader from '$lib/PageHeader.svelte';
-	import { navigate_left, navigate_right } from '$lib/navigate';
 </script>
 
 <div class="flex h-dvh w-full flex-col">
-	<!-- <div class="h-1/8 shrink-0"></div> -->
-	<PageHeader>
-		<span
-			class="group
-			flex-1
-			cursor-pointer
-			hover:font-semibold
-			{LAYOUT_DEBUG && 'bg-yellow-100'}"
-		>
-			<span>&lt&nbsp</span>
-			<!-- svelte-ignore a11y_click_events_have_key_events -->
-			<!-- svelte-ignore a11y_no_static_element_interactions -->
-			<span
-				onclick={() => navigate_left('/projects')}
-				class="
-				inline-block
-				transform
-				transition-transform
-				duration-100
-				active:-rotate-3"
-			>
-				Projects
-			</span>
-		</span>
-		<span
-			class="group
-			flex-1
-			cursor-pointer
-			text-right
-			hover:font-semibold
-			{LAYOUT_DEBUG && 'bg-yellow-100'}"
-		>
-			<!-- svelte-ignore a11y_click_events_have_key_events -->
-			<!-- svelte-ignore a11y_no_static_element_interactions -->
-			<span
-				onclick={() => navigate_right('about')}
-				class="
-				inline-block
-				transform
-				transition-transform
-				duration-100
-				active:rotate-3"
-			>
-				About
-			</span>
-			<span>&nbsp&gt</span>
-		</span>
-	</PageHeader>
+	<PageHeader
+		left_link={{ content: 'Projects', href: '/projects' }}
+		right_link={{ content: 'About', href: '/about' }}
+	/>
+
 	<!-- Spacer -->
 	<div class="h-1/16 shrink-0 xl:h-1/8 {LAYOUT_DEBUG && 'bg-orange-100'}"></div>
 	<!-- Laptop -->

@@ -21,7 +21,9 @@
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
-{@render children()}
+<div class="bg-orange-50/25">
+	{@render children()}
+</div>
 
 <style>
 	@keyframes slide-from-right {
