@@ -4,13 +4,15 @@
 
 	let {
 		screenshot_path,
+		fit_screenshot_vertically,
 		title,
 		description,
 		links
 	}: {
 		screenshot_path?: string;
+		fit_screenshot_vertically?: boolean;
 		title: string;
-		description: string;
+		description: string[];
 		links?: Snippet;
 	} = $props();
 </script>
@@ -20,19 +22,19 @@
     grid grid-cols-1
     overflow-hidden
     rounded-lg
-	lg:grid-cols-3
-	shadow-lg
 	border
 	border-black/10
+	shadow-lg
+	lg:grid-cols-3
     {LAYOUT_DEBUG && 'bg-orange-200'}"
 >
 	<!-- Screenshot -->
-	<div class="size-full rounded {LAYOUT_DEBUG && 'bg-lime-100'}">
+	<div class="flex h-72 items-center justify-center rounded {LAYOUT_DEBUG && 'bg-lime-100'}">
 		{#if screenshot_path}
 			<img
 				src={screenshot_path}
 				alt="live satellite orbit screenshot"
-				class="size-full object-cover"
+				class=" {fit_screenshot_vertically ? 'h-full object-cover' : 'max-h-full max-w-full'}"
 			/>
 		{/if}
 	</div>
@@ -45,7 +47,8 @@
 	>
 		<div
 			class="
-			flex flex-col
+			flex
+			size-full flex-col
 			gap-4
 			p-4
 			{LAYOUT_DEBUG && 'bg-fuchsia-100'}"
@@ -53,9 +56,13 @@
 			<!-- Title -->
 			<h1 class="text-xl font-semibold {LAYOUT_DEBUG && 'bg-lime-100'}">{title}</h1>
 			<!-- Description -->
-			<p class=" {LAYOUT_DEBUG && 'bg-lime-100'}">
-				{description}
-			</p>
+			<div class="flex flex-col gap-4 {LAYOUT_DEBUG && 'bg-lime-100'}">
+				{#each description as paragraph}
+					<p>
+						{paragraph}
+					</p>
+				{/each}
+			</div>
 
 			<!-- Spacer -->
 			<div class="grow {LAYOUT_DEBUG && 'bg-neutral-300'}"></div>

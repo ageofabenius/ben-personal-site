@@ -62,14 +62,6 @@
 							preserveAspectRatio="xMidYMid meet"
 						/>
 					</Sticker>
-
-					<Sticker content="Docker">
-						<image
-							href="/stickers/docker-mark-blue.svg"
-							class="size-full"
-							preserveAspectRatio="xMidYMid meet"
-						/>
-					</Sticker>
 				</div>
 
 				<div

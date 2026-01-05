@@ -21,7 +21,7 @@
 	>
 		<div
 			class="
-			grid gap-16
+			grid auto-rows-fr gap-16
 			{LAYOUT_DEBUG && 'bg-yellow-200'}
 			handwritten
 		"
