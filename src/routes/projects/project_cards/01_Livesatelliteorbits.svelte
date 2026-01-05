@@ -13,19 +13,17 @@
 >
 	{#snippet links()}
 		<div class="flex flex-wrap items-center justify-between gap-4 {LAYOUT_DEBUG && 'bg-slate-100'}">
-			<div class="flex h-6 items-center {LAYOUT_DEBUG && 'bg-lime-100'}">
-				<div class="flex h-full items-center gap-2 rounded-l-full bg-emerald-100 px-2.5 text-sm">
+			<div class="rounded-lg overflow-hidden flex flex-col items-center sm:flex-row {LAYOUT_DEBUG && 'bg-red-200'}">
+				<div class="flex items-center justify-center gap-2 bg-emerald-100 px-2.5 w-full text-sm">
 					<div class="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500"></div>
-					<span class="hidden sm:inline">live at</span>
+					<span>live at</span>
 				</div>
 				<a
 					href="https://livesatelliteorbits.com"
 					target="_blank"
 					class="h-full
-                        rounded-r-lg
                         bg-black/10 pr-2
                         pl-2
-                        
                         font-mono text-sm text-blue-700 underline underline-offset-2 hover:text-blue-900
                     "
 				>

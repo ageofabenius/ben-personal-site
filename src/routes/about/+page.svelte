@@ -7,13 +7,13 @@
 	<PageHeader page_title="About Me" left_link={{ content: 'Home', href: '/' }} />
 	<div
 		class="
-		grid gap-[5%] px-[15%]
+		grid gap-[10%] px-[15%]
 		py-[5%] lg:grid-cols-2
 		{LAYOUT_DEBUG && 'border-2 border-green-200'}
 		handwritten
 		"
 	>
-		<div class="prose text-xl {LAYOUT_DEBUG && 'border-2 border-blue-200'}">
+		<div class="prose {LAYOUT_DEBUG && 'border-2 border-blue-200'}">
 			<h1>Hi, I'm Ben.</h1>
 			<p>I write software.</p>
 			<p>
@@ -30,7 +30,7 @@
 				long-running child process is currently consuming most of my resources.
 			</p>
 		</div>
-		<div class="prose text-center text-xl {LAYOUT_DEBUG && 'border-2 border-purple-200'}">
+		<div class="prose text-center {LAYOUT_DEBUG && 'border-2 border-purple-200'}">
 			<h1>Connect</h1>
 			<hr class="h-0.5 w-full bg-linear-to-r from-transparent via-neutral-500 opacity-50" />
 			<div class="flex flex-col items-center">
