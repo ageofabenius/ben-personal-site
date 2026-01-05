@@ -26,15 +26,15 @@
 
 {#snippet base_filter()}
 	<!-- 1. Close small interior holes using multiple steps with small radii-->
-	<feMorphology in="SourceAlpha" operator="dilate" radius="25" result="close_dilate_1" />
-	<feMorphology in="close_dilate_1" operator="dilate" radius="25" result="close_dilate_2" />
-	<feMorphology in="close_dilate_2" operator="dilate" radius="25" result="close_dilate_3" />
-	<feMorphology in="close_dilate_3" operator="dilate" radius="25" result="closed_dilate_4" />
+	<feMorphology in="SourceAlpha" operator="dilate" radius="30" result="close_dilate_1" />
+	<feMorphology in="close_dilate_1" operator="dilate" radius="30" result="close_dilate_2" />
+	<feMorphology in="close_dilate_2" operator="dilate" radius="30" result="close_dilate_3" />
+	<feMorphology in="close_dilate_3" operator="dilate" radius="30" result="closed_dilate_4" />
 
-	<feMorphology in="closed_dilate_4" operator="erode" radius="25" result="closed_1" />
-	<feMorphology in="closed_1" operator="erode" radius="25" result="closed_2" />
-	<feMorphology in="closed_2" operator="erode" radius="25" result="closed_3" />
-	<feMorphology in="closed_3" operator="erode" radius="25" result="closed" />
+	<feMorphology in="closed_dilate_4" operator="erode" radius="30" result="closed_1" />
+	<feMorphology in="closed_1" operator="erode" radius="30" result="closed_2" />
+	<feMorphology in="closed_2" operator="erode" radius="30" result="closed_3" />
+	<feMorphology in="closed_3" operator="erode" radius="30" result="closed" />
 
 	<!-- 2. Expand for outline -->
 	<feMorphology in="closed" operator="dilate" radius="35" result="outline" />
